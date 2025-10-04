@@ -1,12 +1,14 @@
-"use client";
+'use client';
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth } from "../context/AuthProvider";
+import useUserRole from '@/hooks/useUserRole'; 
 
 export default function Navbar() {
   const { user, loading, logout } = useAuth();
+  const { role } = useUserRole();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
@@ -19,9 +21,10 @@ export default function Navbar() {
 
   const hasBackground = scrolled || pathname !== "/";
 
-  if (loading) return null;
+  if (loading) return null; // avoid flicker
 
-  const navLinks = ["Home", "Courses", "BootCamp", "Contests", "Dashboard", "About"];
+  const navLinks = ["Home", "Courses", "BootCamp", "Contests", "About"];
+  const allowedRolesForDashboard = ['student', 'media manager', 'super admin'];
 
   return (
     <nav
@@ -37,21 +40,6 @@ export default function Navbar() {
           <span className="text-xl font-bold text-white">
             <span className="text-yellow-400">CPS</span> ACADEMY
           </span>
-
-          {/* If user is logged in, show icon + logout */}
-          {user && (
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-[#0a1628] font-bold text-lg">
-                {user.username?.charAt(0).toUpperCase()}
-              </div>
-              <button
-                onClick={logout}
-                className="text-gray-300 hover:text-amber-400 hover:bg-amber-500/10 px-3 py-1 rounded transition-all duration-300"
-              >
-                Logout
-              </button>
-            </div>
-          )}
         </div>
 
         {/* Desktop Links */}
@@ -66,19 +54,42 @@ export default function Navbar() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 group-hover:w-full transition-all duration-300" />
             </Link>
           ))}
+
+          {/* Dashboard only for allowed roles */}
+          {user && allowedRolesForDashboard.includes(role?.toLowerCase()) && (
+            <Link
+              href="/dashboard"
+              className="text-gray-300 hover:text-amber-400 transition-colors duration-300 font-medium relative group"
+            >
+              Dashboard
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 group-hover:w-full transition-all duration-300" />
+            </Link>
+          )}
         </div>
 
-        {/* Desktop Sign In */}
-        {!user && (
-          <div className="hidden md:flex items-center space-x-4">
+        {/* Desktop Auth Buttons */}
+        <div className="hidden md:flex items-center space-x-4">
+          {!user ? (
             <Link
               href="/signin"
               className="text-gray-300 hover:text-amber-400 hover:bg-amber-500/10 px-4 py-2 rounded transition-all duration-300"
             >
               Sign In
             </Link>
-          </div>
-        )}
+          ) : (
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-[#0a1628] font-bold text-lg">
+                {user.username?.charAt(0).toUpperCase()}
+              </div>
+              <button
+                onClick={logout}
+                className="text-gray-300 hover:text-amber-400 hover:bg-amber-500/10 px-3 py-1 rounded transition-all duration-300"
+              >
+                Logout
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -103,6 +114,17 @@ export default function Navbar() {
                 {link}
               </Link>
             ))}
+
+            {/* Dashboard for allowed roles */}
+            {user && allowedRolesForDashboard.includes(role?.toLowerCase()) && (
+              <Link
+                href="/dashboard"
+                onClick={() => setMobileOpen(false)}
+                className="block px-4 py-2 text-gray-300 hover:text-amber-400 hover:bg-[#0a1628]/50 rounded transition-all duration-300"
+              >
+                Dashboard
+              </Link>
+            )}
 
             {!user ? (
               <Link

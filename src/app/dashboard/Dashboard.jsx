@@ -1,8 +1,31 @@
 'use client';
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import useUserRole from '@/hooks/useUserRole'; // your custom hook
 
 export default function DashboardSection() {
+  const { role, username, loading } = useUserRole();
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState('level1');
+
+  // Role-based access
+  useEffect(() => {
+    if (!loading) {
+      const allowedRoles = ['student', 'media manager', 'super admin'];
+      if (!allowedRoles.includes(role?.toLowerCase())) {
+        router.push('/'); // redirect to homepage
+      }
+    }
+  }, [role, loading, router]);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen text-white">
+        Checking role...
+      </div>
+    );
+  }
 
   return (
     <div className="bg-[#0f0f1a] min-h-screen text-white flex justify-center py-10 mt-20">
@@ -32,25 +55,27 @@ export default function DashboardSection() {
 
         {/* Welcome Message */}
         <h2 className="mt-8 text-lg font-semibold">
-          Welcome Back <span className="text-yellow-400">Shahadat Siddikee Shawon</span>, Ready For Your Next Lesson?
+          Welcome Back <span className="text-yellow-400">{username}</span>, Ready For Your Next Lesson?
         </h2>
 
         {/* Tabs */}
         <div className="flex gap-6 mt-4 border-b border-yellow-600 overflow-x-auto">
           <button
-            className={`pb-2 whitespace-nowrap ${activeTab === 'level1'
+            className={`pb-2 whitespace-nowrap ${
+              activeTab === 'level1'
                 ? 'text-yellow-400 border-b-2 border-yellow-400'
                 : 'text-gray-400'
-              }`}
+            }`}
             onClick={() => setActiveTab('level1')}
           >
             Level 1 Course
           </button>
           <button
-            className={`pb-2 whitespace-nowrap ${activeTab === 'conceptual'
+            className={`pb-2 whitespace-nowrap ${
+              activeTab === 'conceptual'
                 ? 'text-yellow-400 border-b-2 border-yellow-400'
                 : 'text-gray-400'
-              }`}
+            }`}
             onClick={() => setActiveTab('conceptual')}
           >
             Conceptual Session
