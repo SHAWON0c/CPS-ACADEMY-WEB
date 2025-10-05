@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-r from-slate-900 via-indigo-900 to-blue-800 text-white py-16">
+    <section className="bg-gradient-to-r from-slate-900 via-indigo-900 to-blue-800 text-white py-20">
       <div className="container mx-auto px-6 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left: Text content */}
@@ -127,8 +127,8 @@ export default function Hero() {
             </div>
 
             {/* Decorative code-like card */}
-            <div className="absolute -bottom-8 left-6 w-48 sm:w-56 bg-slate-800/60 border border-white/6 rounded-xl p-3 text-xs">
-              <pre className="whitespace-pre-wrap">
+            <div className="absolute -bottom-36 right-0 w-48 sm:w-56 bg-orange-300 border border-white/6 rounded-xl p-3 text-xs">
+              <pre className="whitespace-pre-wrap text-black">
 {`// sample problem
 function solve(){
   // read input
