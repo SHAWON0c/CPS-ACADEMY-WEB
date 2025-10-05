@@ -41,10 +41,10 @@ const students = [
 
 export default function SuccessStories() {
   return (
-    <section className="w-full py-16 bg-gradient-to-r from-black via-blue-900 to-black">
+    <section className="w-full py-16 bg-gradient-to-r from-[#0b1a38] via-[#142850] to-[#0b1a38]">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-yellow-400">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-cyan-400">
           Our Students’ Success Stories
         </h2>
 
@@ -62,7 +62,7 @@ export default function SuccessStories() {
         >
           {students.map((student) => (
             <SwiperSlide key={student.id}>
-              <div className="rounded-2xl overflow-hidden bg-gray-900 border border-yellow-400 shadow-lg hover:shadow-yellow-500/40 transform hover:scale-105 transition-all duration-300">
+              <div className="rounded-2xl overflow-hidden bg-[#142850] border border-cyan-400 shadow-lg hover:shadow-cyan-500/40 transform hover:scale-105 transition-all duration-300">
                 {/* Thumbnail with Play Icon */}
                 <div className="relative group">
                   <Image
@@ -73,7 +73,7 @@ export default function SuccessStories() {
                     height={208}
                   />
                   <button className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="bg-yellow-400 text-black p-4 rounded-full shadow-lg hover:bg-yellow-500 transition">
+                    <span className="bg-cyan-400 text-[#0b1a38] p-4 rounded-full shadow-lg hover:bg-cyan-500 transition">
                       <FaPlay />
                     </span>
                   </button>
@@ -81,7 +81,7 @@ export default function SuccessStories() {
 
                 {/* Info */}
                 <div className="p-6">
-                  <h3 className="font-semibold text-lg text-yellow-400 mb-1 group-hover:text-yellow-300 transition-colors duration-300">
+                  <h3 className="font-semibold text-lg text-cyan-400 mb-1 group-hover:text-cyan-200 transition-colors duration-300">
                     {student.name}
                   </h3>
                   <p className="text-sm text-gray-300">{student.course}</p>

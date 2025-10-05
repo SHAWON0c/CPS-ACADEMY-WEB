@@ -13,11 +13,12 @@ export default function Hero() {
       {/* Header Text */}
       <div className="text-center max-w-3xl z-10">
         <h1 className="text-3xl md:text-5xl font-bold text-white leading-snug">
-          <span className="text-yellow-400">শুন্য থেকে শুরু</span> করে হয়ে ওঠো প্রফেশনাল ওয়েব ডেভেলপার
+          <span className="text-yellow-400">শুন্য থেকে শুরু</span> করে হয়ে ওঠো Competitive Programming এক্সপার্ট
         </h1>
         <p className="mt-4 text-gray-200 text-sm md:text-base">
-          ৬ মাসের সুপার গাইডেড Bootcamp, যেকোনো সমস্যায় ফ্রেজি লেভেলের ২৪/৭ Support, ৮০+ প্রজেক্ট, ও প্রিমিয়াম জব
-          প্লেসমেন্ট সাপোর্ট— যার মাধ্যমে গত ৫ বছর ৫০০০+ শিক্ষার্থী সফলভাবে ক্যারিয়ার শুরু করেছে।
+          ৬ মাসের সুপার গাইডেড Competitive Programming Bootcamp, যেকোনো সমস্যায় ২৪/৭ Support, ২০০+ প্র্যাকটিস সমস্যা, এবং
+          Codeforces Expert র‍্যাংক অর্জনের জন্য প্রিমিয়াম mentorship— যার মাধ্যমে শিক্ষার্থীরা আন্তর্জাতিক প্রতিযোগিতায় সফলতা
+          অর্জন করেছে।
         </p>
         <button className="mt-6 px-6 py-3 bg-yellow-400 text-indigo-900 font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
           এখনই এনরোল করুন
@@ -34,11 +35,11 @@ export default function Hero() {
 
           {/* Background Icons */}
           <div className="absolute top-4 left-4 text-[32px] opacity-30 space-x-4 text-gray-700">
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>JS</span>
-            <span>React</span>
-            <span>Node</span>
+            <span>C++</span>
+            <span>DSA</span>
+            <span>Graph</span>
+            <span>DP</span>
+            <span>Codeforces</span>
           </div>
 
           {/* Hero Image */}
@@ -49,13 +50,13 @@ export default function Hero() {
           />
 
           {/* Course Info Box */}
-          <div className="absolute bottom-4 left-4 bg-gradient-to-r from-indigo-700 to-purple-600 text-white rounded-lg px-4 py-2 flex items-center space-x-4 shadow-lg">
+          <div className="absolute bottom-4 left-4 bg-gradient-to-r from-indigo-700 to-purple-600 text-white rounded-lg px-4 py-2 flex flex-col md:flex-row md:items-center md:space-x-6 shadow-lg text-sm md:text-base">
             <div className="flex items-center space-x-2">
-              <span>এনরোলমেন্ট শুরু:</span>
+              <span>Enrollment শুরু:</span>
               <strong>10th Dec, 2025</strong>
             </div>
             <div className="flex items-center space-x-2">
-              <span>এনরোলমেন্ট শেষ:</span>
+              <span>Enrollment শেষ:</span>
               <strong>24th Dec, 2025</strong>
             </div>
           </div>

@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from "react"
 import Image from "next/image"
-import CourseImg1 from "../../public/images/courses/course1.jpg" 
-import CourseImg2 from "../../public/images/courses/course2.jpg" 
+import CourseImg1 from "../../public/images/courses/course1.jpg"
+import CourseImg2 from "../../public/images/courses/course2.jpg"
 
 export default function CourseSection() {
     const canvasRef = useRef(null)
@@ -144,15 +144,15 @@ export default function CourseSection() {
                         </div>
 
                         <div className="grid grid-cols-3 gap-4 pt-1 border-t border-amber-500/20 left-0">
-                            <div className="text-center">
+                            <div className="text-left">
                                 <div className="text-2xl font-bold text-amber-400 mb-1">500+</div>
                                 <div className="text-xs text-gray-400">Problems</div>
                             </div>
-                            <div className="text-center">
+                            <div className="text-left">
                                 <div className="text-2xl font-bold text-amber-400 mb-1">50+</div>
                                 <div className="text-xs text-gray-400">Topics</div>
                             </div>
-                            <div className="text-center">
+                            <div className="text-left">
                                 <div className="text-2xl font-bold text-amber-400 mb-1">10k+</div>
                                 <div className="text-xs text-gray-400">Students</div>
                             </div>
@@ -161,54 +161,17 @@ export default function CourseSection() {
                 </div>
 
 
-                 <div className=" mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                   
-                    {/* left text */}
-                    <div className="space-y-6">
-                        <h3 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500 leading-tight">
-                            Kickstart your journey in Competitive Programming
-                        </h3>
-                        <p className="text-gray-300 text-base leading-relaxed">
-                            Welcome to Programming Hero! Dive into the world of algorithms and data structures with a focus on
-                            problem-solving techniques. Master dynamic programming, graph theory, and advanced algorithms from the
-                            beginning of your journey until you reach Red Coder status.
-                        </p>
-
-                        <div className="flex flex-wrap gap-3">
-                            <button className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white font-bold px-6 py-3 text-base rounded-lg shadow-md shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300">
-                                Explore
-                            </button>
-                            <button className="border-2 border-amber-500/50 text-amber-400 hover:bg-amber-500/10 hover:border-amber-400 font-bold px-6 py-3 text-base rounded-lg transition-all duration-300 bg-transparent">
-                                Success Stories
-                            </button>
-                        </div>
-
-                        <div className="grid grid-cols-3 gap-4 pt-6 border-t border-amber-500/20">
-                            <div className="text-center">
-                                <div className="text-2xl font-bold text-amber-400 mb-1">500+</div>
-                                <div className="text-xs text-gray-400">Problems</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-2xl font-bold text-amber-400 mb-1">50+</div>
-                                <div className="text-xs text-gray-400">Topics</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-2xl font-bold text-amber-400 mb-1">10k+</div>
-                                <div className="text-xs text-gray-400">Students</div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    {/* right card */}
-                    <div className="relative group">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mt-20">
+                    {/* Mobile first: card on top, text below */}
+                    <div className="order-1 lg:order-2 relative group">
                         <div className="absolute -inset-1 bg-gradient-to-br from-amber-500 via-yellow-500 to-amber-600 rounded-2xl blur-sm opacity-75 group-hover:opacity-100 transition duration-500" />
 
                         <div className="relative bg-[#1a1f3a] rounded-2xl overflow-hidden">
-                            <div className="relative h-64 bg-gradient-to-br from-[#0f1729] to-[#1a1f3a] flex items-center justify-center overflow-hidden">
+                            <div className="relative h-44 bg-gradient-to-br from-[#0f1729] to-[#1a1f3a] flex items-center justify-center overflow-hidden">
                                 {/* Add Image */}
                                 <div className="absolute inset-0 opacity-80">
                                     <Image
-                                        src={CourseImg2}
+                                        src={CourseImg1}
                                         alt="Course Image"
                                         className="object-cover w-full h-full rounded-2xl"
                                         fill
@@ -242,7 +205,7 @@ export default function CourseSection() {
                                 <div className="absolute bottom-1/4 left-8 w-6 h-6 border-2 border-yellow-400/40 rounded-full animate-float-medium" />
                             </div>
 
-                            <div className="p-6 space-y-4">
+                            <div className="p-6 space-y-2">
                                 <h3 className="text-2xl font-bold text-white">Complete Competitive Programming</h3>
                                 <button className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white font-bold py-4 text-base rounded-lg shadow-md shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300">
                                     Let's Code
@@ -251,8 +214,45 @@ export default function CourseSection() {
                         </div>
                     </div>
 
-                   
+                    {/* Left text section */}
+                    <div className="order-2 lg:order-1 space-y-2">
+                        <h3 className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500 leading-tight">
+                            Kickstart your journey in Competitive Programming
+                        </h3>
+                        <p className="text-gray-300 text-base leading-relaxed">
+                            Welcome to Programming Hero! Dive into the world of algorithms and data structures with a focus on
+                            problem-solving techniques. Master dynamic programming, graph theory, and advanced algorithms from the
+                            beginning of your journey until you reach Red Coder status.
+                        </p>
+
+                        <div className="flex flex-wrap gap-3">
+                            <button className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white font-bold px-6 py-3 text-base rounded-lg shadow-md shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300">
+                                Explore
+                            </button>
+                            <button className="border-2 border-amber-500/50 text-amber-400 hover:bg-amber-500/10 hover:border-amber-400 font-bold px-6 py-3 text-base rounded-lg transition-all duration-300 bg-transparent">
+                                Success Stories
+                            </button>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-4 pt-1 border-t border-amber-500/20 left-0">
+                            <div className="text-left">
+                                <div className="text-2xl font-bold text-amber-400 mb-1">500+</div>
+                                <div className="text-xs text-gray-400">Problems</div>
+                            </div>
+                            <div className="text-left">
+                                <div className="text-2xl font-bold text-amber-400 mb-1">50+</div>
+                                <div className="text-xs text-gray-400">Topics</div>
+                            </div>
+                            <div className="text-left">
+                                <div className="text-2xl font-bold text-amber-400 mb-1">10k+</div>
+                                <div className="text-xs text-gray-400">Students</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
+
             </div>
         </section>
     )

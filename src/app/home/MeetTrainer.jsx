@@ -69,7 +69,7 @@ export default function MeetTrainer() {
   ];
 
   return (
-    <section className="relative bg-black text-white py-20 px-4 md:px-16 overflow-hidden max-w-[70%] mx-auto">
+    <section className="relative bg-gradient-to-r from-[#0b1a38] via-[#142850] to-[#0b1a38] text-white py-20 px-4 md:px-16 overflow-hidden">
       {/* Section header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-400 mb-2">Meet Our Trainers</h2>
@@ -95,7 +95,7 @@ export default function MeetTrainer() {
       >
         {trainers.map((trainer, idx) => (
           <SwiperSlide key={idx}>
-            <div className="bg-gradient-to-t from-blue-900 to-black border border-yellow-500 rounded-xl p-4 shadow-lg hover:shadow-yellow-400/50 transition duration-300 flex flex-col items-center text-center">
+            <div className="bg-gradient-to-t from-[#142850] to-black border border-yellow-400 rounded-xl p-4 shadow-lg hover:shadow-yellow-500/50 transition duration-300 flex flex-col items-center text-center">
               {/* Image */}
               <div className="w-24 h-24 mb-3 overflow-hidden rounded-full border-2 border-yellow-400 shadow">
                 <Image
@@ -109,7 +109,7 @@ export default function MeetTrainer() {
 
               {/* Info */}
               <h3 className="text-lg font-semibold text-yellow-300">{trainer.name}</h3>
-              <p className="text-xs text-blue-400 mb-1">{trainer.title}</p>
+              <p className="text-xs text-cyan-400 mb-1">{trainer.title}</p>
               <p className="text-xs text-gray-300 mb-2">{trainer.bio}</p>
 
               {/* Achievements */}
