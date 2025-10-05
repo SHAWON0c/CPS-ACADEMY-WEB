@@ -5,7 +5,7 @@ import img1 from '../../../public/images/author/author1.jpeg'
 
 export default function ConsultationSection() {
   return (
-    <section className="py-16 bg-gradient-to-b from-[#0b1a38] via-[#1a2a4a] to-[#0b1a38]">
+    <section className="py-16 bg-gradient-to-b from-[#667aa3] via-[#1a2a4a] to-[#0b1a38]">
       <div className="max-w-7xl mx-auto px-4">
         <div className="bg-gradient-to-r from-[#142850] to-[#1f3a60] rounded-3xl shadow-2xl p-8 md:flex md:items-center">
           

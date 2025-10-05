@@ -69,12 +69,12 @@ export default function MeetTrainer() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-r from-[#0b1a38] via-[#142850] to-[#0b1a38] text-white py-20 px-4 md:px-16 overflow-hidden">
+    <section className="relative bg-black text-white py-20 px-4 md:px-16 overflow-hidden">
       {/* Section header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-yellow-400 mb-2">Meet Our Trainers</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-yellow-400 mb-2">আমাদের প্রশিক্ষকরা</h2>
         <p className="text-sm sm:text-md text-gray-300 max-w-2xl mx-auto">
-          Learn from top mentors, ICPC finalists, and Codeforces-rated champions.
+          শীর্ষস্থানীয় মেন্টরদের কাছ থেকে শিখুন, ICPC ফাইনালিস্ট এবং Codeforces রেটেড চ্যাম্পিয়নদের কাছ থেকে।
         </p>
       </div>
 
@@ -95,7 +95,7 @@ export default function MeetTrainer() {
       >
         {trainers.map((trainer, idx) => (
           <SwiperSlide key={idx}>
-            <div className="bg-gradient-to-t from-[#142850] to-black border border-yellow-400 rounded-xl p-4 shadow-lg hover:shadow-yellow-500/50 transition duration-300 flex flex-col items-center text-center">
+            <div className="bg-black/90 border border-yellow-400 rounded-xl p-6 shadow-lg hover:shadow-yellow-400/50 transition duration-300 flex flex-col items-center text-center">
               {/* Image */}
               <div className="w-24 h-24 mb-3 overflow-hidden rounded-full border-2 border-yellow-400 shadow">
                 <Image
@@ -127,7 +127,7 @@ export default function MeetTrainer() {
                 className="flex items-center text-yellow-400 hover:text-yellow-300 text-xs transition"
               >
                 <FaCode className="mr-1" />
-                <span className="underline">Codeforces Profile</span>
+                <span className="underline">Codeforces প্রোফাইল</span>
               </a>
             </div>
           </SwiperSlide>

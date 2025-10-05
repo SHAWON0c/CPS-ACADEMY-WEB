@@ -3,11 +3,11 @@
 export default function CourseSection() {
   const courses = [
     {
-      title: "Beginner Track",
-      subtitle: "Start Your CP Journey",
+      title: "শুরু করো",
+      subtitle: "Competitive Programming এর যাত্রা শুরু করো",
       description:
-        "Master the fundamentals of competitive programming. Learn basic algorithms, data structures, and problem-solving techniques to reach Specialist level.",
-      topics: ["Arrays & Strings", "Sorting & Searching", "Basic Math", "Greedy Algorithms"],
+        "CP এর মূল ভিত্তি শেখো। বেসিক এলগরিদম, ডাটা স্ট্রাকচার, এবং প্রোবলেম সলভিং টেকনিক আয়ত্ত করে Specialist লেভেলে পৌঁছাও।",
+      topics: ["Array & String", "Sorting & Searching", "Basic Math", "Greedy Algorithms"],
       difficulty: "Newbie → Specialist",
       color: "from-yellow-500 to-amber-400",
       icon: (
@@ -19,10 +19,10 @@ export default function CourseSection() {
       ),
     },
     {
-      title: "Intermediate Track",
-      subtitle: "Level Up Your Skills",
+      title: "মধ্যবর্তী স্তর",
+      subtitle: "দক্ষতা বাড়াও",
       description:
-        "Dive deep into advanced data structures and algorithms. Master dynamic programming, graph theory, and segment trees to reach Expert level.",
+        "উন্নত ডাটা স্ট্রাকচার ও এলগরিদমে দক্ষতা অর্জন করো। ডাইনামিক প্রোগ্রামিং, গ্রাফ থিওরি, সেগমেন্ট ট্রি ও আরও শেখো Expert লেভেলে পৌঁছানোর জন্য।",
       topics: ["Dynamic Programming", "Graph Algorithms", "Trees & Graphs", "Number Theory"],
       difficulty: "Specialist → Expert",
       color: "from-blue-600 to-indigo-500",
@@ -34,10 +34,10 @@ export default function CourseSection() {
       ),
     },
     {
-      title: "Advanced Track",
-      subtitle: "Become a Red Coder",
+      title: "উন্নত স্তর",
+      subtitle: "Red Coder হও",
       description:
-        "Master complex algorithms and advanced techniques. Learn advanced DP, computational geometry, and string algorithms to reach Grandmaster level.",
+        "জটিল এলগরিদম ও অ্যাডভান্সড টেকনিক আয়ত্ত করো। Advanced DP, Computational Geometry, এবং String Algorithms শেখো Grandmaster লেভেলে পৌঁছানোর জন্য।",
       topics: ["Advanced DP", "String Algorithms", "Computational Geometry", "Game Theory"],
       difficulty: "Expert → Red Coder",
       color: "from-red-500 to-orange-500",
@@ -84,10 +84,10 @@ export default function CourseSection() {
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-yellow-400">
-            Learning Tracks
+            শেখার পথসমূহ
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Choose your path and master competitive programming step by step
+            ধাপে ধাপে Competitive Programming আয়ত্ত করো এবং নিজের দক্ষতা বাড়াও
           </p>
         </div>
 
@@ -122,7 +122,7 @@ export default function CourseSection() {
 
                 {/* Topics */}
                 <div className="space-y-2">
-                  <p className="text-xs font-semibold text-yellow-400 uppercase tracking-wider">Key Topics</p>
+                  <p className="text-xs font-semibold text-yellow-400 uppercase tracking-wider">মূল বিষয়সমূহ</p>
                   <div className="flex flex-wrap gap-2">
                     {course.topics.map((topic, i) => (
                       <span
@@ -137,7 +137,7 @@ export default function CourseSection() {
 
                 {/* CTA Button */}
                 <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-4 rounded-xl shadow-lg shadow-yellow-400/30 hover:shadow-yellow-400/50 transition-all duration-300 border border-yellow-400/30 mt-4 flex items-center justify-center gap-2">
-                  Start Track
+                  ট্র্যাক শুরু করো
                   <svg
                     className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
                     viewBox="0 0 24 24"
@@ -155,9 +155,9 @@ export default function CourseSection() {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <p className="text-gray-300 mb-6">Not sure where to start? Take our skill assessment test</p>
+          <p className="text-gray-300 mb-6">কোথা থেকে শুরু করবে বুঝতে পারছো না? আমাদের স্কিল অ্যাসেসমেন্ট নাও</p>
           <button className="border-yellow-400/50 text-yellow-400 hover:bg-yellow-500/10 hover:border-yellow-400 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 bg-transparent">
-            Take Assessment
+            অ্যাসেসমেন্ট নাও
           </button>
         </div>
       </div>

@@ -61,7 +61,7 @@ export default function CourseOverview() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-5xl font-extrabold text-yellow-400 mb-4">Course Overview</h2>
+          <h2 className="text-5xl font-extrabold text-yellow-400 mb-4">কোর্স ওভারভিউ</h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             A structured curriculum designed to take you from beginner to advanced in problem-solving and algorithms using C++.
           </p>
@@ -69,7 +69,7 @@ export default function CourseOverview() {
 
         {/* Modules Section */}
         <div className="mb-24">
-          <h3 className="text-3xl font-bold text-white mb-8">📘 Course Modules</h3>
+          <h3 className="text-3xl font-bold text-white mb-8">📘 কোর্স মডিউল</h3>
           <div className="space-y-4">
             {modules.map((module, idx) => (
               <div
@@ -99,7 +99,7 @@ export default function CourseOverview() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Features */}
           <div className="bg-gray-900 border border-yellow-400 p-8 rounded-2xl shadow hover:shadow-yellow-400/30 transition">
-            <h3 className="text-2xl font-bold text-yellow-400 mb-6">💡 Key Features</h3>
+            <h3 className="text-2xl font-bold text-yellow-400 mb-6">💡 প্রধান সুবিধাসমূহ</h3>
             <ul className="space-y-4">
               {features.map((feature, idx) => (
                 <li key={idx} className="flex items-start">
@@ -112,7 +112,7 @@ export default function CourseOverview() {
 
           {/* Structure */}
           <div className="bg-gray-900 border border-yellow-400 p-8 rounded-2xl shadow hover:shadow-yellow-400/30 transition">
-            <h3 className="text-2xl font-bold text-yellow-400 mb-6">🧩 Course Structure</h3>
+            <h3 className="text-2xl font-bold text-yellow-400 mb-6">🧩 কোর্স স্ট্রাকচার</h3>
             <p className="text-gray-300 mb-4">
               This program is broken down into 6 core modules. Each builds on the last, with live sessions, problem sets, and contests:
             </p>

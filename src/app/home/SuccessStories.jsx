@@ -41,7 +41,7 @@ const students = [
 
 export default function SuccessStories() {
   return (
-    <section className="w-full py-16 bg-gradient-to-r from-[#0b1a38] via-[#142850] to-[#0b1a38]">
+    <section className="w-full py-16 bg-gradient-to-r bg-[#4c5f84] ">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-cyan-400">
