@@ -1,28 +1,73 @@
-// src/app/course/[id]/page.jsx
-import CourseLayout from "@/components/CourseLayout";
+import Image from "next/image"
+import Link from "next/link"
+import CourseImg1 from "../../../../public/images/courses/course1.jpg"
+import CourseImg2 from "../../../../public/images/courses/course2.jpg"
 
-// Map your courses to their video URLs
-const courseVideos = {
-  course1: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Example video
-  course2: "https://www.youtube.com/embed/VIDEO_ID_2",
-  course3: "https://www.youtube.com/embed/VIDEO_ID_3",
-};
+// `params` comes from Next.js App Router
+export default function CourseDetails({ params }) {
+    const { id } = params // <-- this replaces useRouter
 
-const courseTitles = {
-  course1: "C to C++ Bootcamp",
-  course2: "Advanced Competitive Programming",
-  course3: "Data Structures & Algorithms",
-};
+    const courses = [
+        {
+            slug: "mastering-algorithms",
+            title: "Mastering Algorithms & Data Structures",
+            description:
+                "Build strong foundations in algorithms and data structures. Learn step-by-step problem-solving techniques for coding interviews and competitions.",
+            img: CourseImg1,
+            curriculum: [
+                "Introduction to Programming",
+                "Sorting & Searching Algorithms",
+                "Dynamic Programming",
+                "Graph Algorithms"
+            ]
+        },
+        {
+            slug: "advanced-competitive",
+            title: "Advanced Competitive Programming",
+            description:
+                "Enhance your problem-solving skills with advanced topics like dynamic programming, graphs, and optimization techniques to become a top coder.",
+            img: CourseImg2,
+            curriculum: [
+                "Advanced Graphs",
+                "Bit Manipulation",
+                "Number Theory",
+                "Optimization Problems"
+            ]
+        }
+    ]
 
-export default function CoursePage({ params }) {
-  const { id } = params;
+    const course = courses.find(c => c.slug === id)
 
-  const videoUrl = courseVideos[id];
-  const title = courseTitles[id];
+    if (!course) return <p className="text-white text-center mt-20">Course not found.</p>
 
-  if (!videoUrl) {
-    return <p className="p-10 text-white">Course not found!</p>;
-  }
+    return (
+        <section className="py-24 px-4 bg-[#0a0e27] min-h-screen ">
+            <div className="max-w-4xl mx-auto text-white space-y-8">
+              
 
-  return <CourseLayout title={title} videoUrl={videoUrl} />;
+                <h1 className="text-4xl md:text-5xl font-bold">{course.title}</h1>
+                <div className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-lg shadow-black/50">
+                    <Image src={course.img} alt={course.title} className="object-cover" fill />
+                </div>
+
+                <p className="text-gray-300 text-lg">{course.description}</p>
+
+                <div>
+                    <h2 className="text-2xl font-bold mb-4">Curriculum</h2>
+                    <ul className="list-disc list-inside space-y-2 text-gray-200">
+                        {course.curriculum.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <button className="bg-gradient-to-r from-amber-500 to-yellow-500 px-8 py-4 rounded-lg font-bold text-white shadow-lg hover:scale-105 transition-transform duration-300">
+                    Enroll Now
+                </button>  <br />
+                  <Link href="/courses">
+                    <button className="text-amber-400 font-bold hover:underline">&larr; Back to Courses</button>
+                </Link>
+            </div>
+        </section>
+    )
 }
