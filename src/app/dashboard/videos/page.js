@@ -1,14 +1,19 @@
 "use client";
 
-import React from "react";
-import { useRouter } from "next/router";
+// Prevent static prerendering
+export const dynamic = "force-dynamic";
 
-export default function Dashboard() {
+import React from "react";
+import { useRouter } from "next/navigation"; // useNavigation is preferred in App Router
+import Image from "next/image";
+
+export default function DashboardVideos() {
   const router = useRouter();
 
   return (
     <div className="bg-[#0f0f1a] min-h-screen text-white flex justify-center py-10 mt-20">
       <div className="w-full max-w-[80%] px-4">
+
         {/* Challenge Banner */}
         <div className="bg-gradient-to-r from-yellow-700 to-yellow-600 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
           <div className="flex-1">
@@ -19,15 +24,20 @@ export default function Dashboard() {
             <p className="text-sm text-gray-200 mt-1">
               Take the challenge to improve your overall performance.
             </p>
-            <button className="mt-3 px-4 py-2 bg-yellow-500 hover:bg-yellow-600 rounded-lg text-black font-medium transition">
+            <button
+              className="mt-3 px-4 py-2 bg-yellow-500 hover:bg-yellow-600 rounded-lg text-black font-medium transition"
+              onClick={() => router.push("/dashboard/challenges")}
+            >
               Take Challenge →
             </button>
           </div>
           <div className="flex-shrink-0">
-            <img
+            <Image
               src="/images/running.png"
               alt="challenge"
-              className="w-40 mx-auto md:mx-0"
+              width={160}
+              height={160}
+              className="mx-auto md:mx-0"
             />
           </div>
         </div>
@@ -39,11 +49,14 @@ export default function Dashboard() {
 
         {/* Course Cards */}
         <div className="mt-6 flex flex-col gap-6">
+
           {/* Course 1 */}
           <div className="bg-[#1b1b2f] rounded-xl flex flex-col md:flex-row overflow-hidden shadow-lg">
-            <img
+            <Image
               src="/images/course1.png"
               alt="course"
+              width={240}
+              height={160}
               className="w-full md:w-60 object-cover flex-shrink-0"
             />
             <div className="flex-1 p-6 flex flex-col justify-between">
@@ -82,9 +95,11 @@ export default function Dashboard() {
 
           {/* Course 2 */}
           <div className="bg-[#1b1b2f] rounded-xl flex flex-col md:flex-row overflow-hidden shadow-lg">
-            <img
+            <Image
               src="/images/course2.png"
               alt="course"
+              width={240}
+              height={160}
               className="w-full md:w-60 object-cover flex-shrink-0"
             />
             <div className="flex-1 p-6 flex flex-col justify-between">
@@ -117,6 +132,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
