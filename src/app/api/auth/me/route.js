@@ -10,9 +10,12 @@ export async function GET(req) {
     }
 
     // Populate the role
-    const response = await axios.get("http://localhost:1337/api/users/me?populate=role", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/users/me?populate=role`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
 
     return new Response(JSON.stringify(response.data), { status: 200 });
   } catch (err) {

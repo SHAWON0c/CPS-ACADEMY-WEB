@@ -1,18 +1,15 @@
-// components/Footer.tsx
+// components/Footer.jsx
 "use client";
 
 import Image from "next/image";
+import { FaLinkedin, FaInstagram, FaFacebook, FaYoutube, FaCcMastercard, FaCcVisa, FaPaypal } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="relative bg-gradient-to-t from-[#0b1a38] to-[#1a2a4a] pt-24 pb-10 text-gray-300 overflow-hidden">
       {/* SVG Wave Background */}
       <div className="absolute top-0 left-0 w-full h-40 overflow-hidden -z-10">
-        <svg
-          viewBox="0 0 1440 320"
-          className="w-full h-full"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg viewBox="0 0 1440 320" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <path
             fill="#142850"
             fillOpacity="1"
@@ -25,38 +22,22 @@ export default function Footer() {
         {/* Logo & Info */}
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={50}
-              height={50}
-              className="rounded-full"
-            />
-            <h2 className="text-2xl font-bold text-cyan-400">CPS ACADEMY</h2>
+
+            <h2 className="text-2xl font-bold text-yellow-400">CPS <span className="text-white">Academy</span></h2>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
             Bangladesh's leading Competitive Programming & Codeforces Training Academy
           </p>
 
-          <div className="flex space-x-4 mt-2">
-            {["linkedin", "instagram", "facebook", "youtube"].map((platform) => (
-              <a
-                key={platform}
-                href="#"
-                className="hover:text-cyan-400 transition-colors transform hover:scale-110"
-              >
-                <Image
-                  src={`/social/${platform}.svg`}
-                  alt={platform}
-                  width={24}
-                  height={24}
-                />
-              </a>
-            ))}
+          <div className="flex space-x-4 mt-2 text-yellow-400 text-xl">
+            <FaLinkedin className="hover:text-yellow-300 transition-colors" />
+            <FaInstagram className="hover:text-yellow-300 transition-colors" />
+            <FaFacebook className="hover:text-yellow-300 transition-colors" />
+            <FaYoutube className="hover:text-yellow-300 transition-colors" />
           </div>
 
           <div className="mt-4">
-            <p className="text-gray-400 text-sm mb-1">Download Our App</p>
+            <p className="text-yellow-400 text-sm mb-1">Download Our App</p>
             <a href="#">
               <Image
                 src="/google-play-badge.png"
@@ -71,46 +52,26 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="space-y-3">
-          <h3 className="font-semibold text-cyan-400 mb-2">Quick Links</h3>
+          <h3 className="font-semibold text-white mb-2">Quick Links</h3>
           <ul className="space-y-2 text-gray-400 text-sm">
             <li>
-              <a
-                href="#"
-                className="hover:text-cyan-300 transition-colors duration-300"
-              >
-                Courses
-              </a>
+              <a href="#" className="hover:text-yellow-300 transition-colors duration-300">Courses</a>
             </li>
             <li>
-              <a
-                href="#"
-                className="hover:text-cyan-300 transition-colors duration-300"
-              >
-                Hire Talents
-              </a>
+              <a href="#" className="hover:text-yellow-300 transition-colors duration-300">Hire Talents</a>
             </li>
             <li>
-              <a
-                href="#"
-                className="hover:text-cyan-300 transition-colors duration-300"
-              >
-                Affiliation
-              </a>
+              <a href="#" className="hover:text-yellow-300 transition-colors duration-300">Affiliation</a>
             </li>
             <li>
-              <a
-                href="#"
-                className="hover:text-cyan-300 transition-colors duration-300"
-              >
-                Career
-              </a>
+              <a href="#" className="hover:text-yellow-300 transition-colors duration-300">Career</a>
             </li>
           </ul>
         </div>
 
         {/* Contact */}
         <div className="space-y-3">
-          <h3 className="font-semibold text-cyan-400 mb-2">Contact Us</h3>
+          <h3 className="font-semibold text-white mb-2">Contact Us</h3>
           <p className="text-gray-400 text-sm">
             <strong>Head Office:</strong> 1/E/2, Adabor, Mohammadpur, Dhaka-1207
           </p>
@@ -123,31 +84,25 @@ export default function Footer() {
 
         {/* Payment & Security */}
         <div className="space-y-3">
-          <h3 className="font-semibold text-cyan-400 mb-2">Secure Payment</h3>
-          <div className="flex items-center bg-cyan-900/20 border border-cyan-400 text-cyan-400 px-3 py-2 rounded-md mb-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mr-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+          <h3 className="font-semibold text- mb-2">Secure Payment</h3>
+          <div className="flex items-center bg-yellow-900/20 border border-yellow-400 text-yellow-400 px-3 py-2 rounded-md mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
             <span className="text-sm font-medium">GUARANTEED SECURE PAYMENT</span>
           </div>
           <p className="text-gray-400 text-sm">No hidden charges.</p>
           <p className="text-gray-400 text-sm">We Accept:</p>
-          <div className="flex space-x-2 mt-1">
-            {["bkash", "nagad", "rocket", "mastercard", "visa"].map((pay) => (
-              <img key={pay} src={`/payments/${pay}.png`} alt={pay} className="h-6" />
-            ))}
+          <div className="flex space-x-3 mt-1 text-yellow-400 text-2xl">
+            <FaCcMastercard className="hover:text-yellow-300 transition-colors" />
+            <FaCcVisa className="hover:text-yellow-300 transition-colors" />
+            <FaPaypal className="hover:text-yellow-300 transition-colors" />
           </div>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="mt-12 border-t border-cyan-700/40 pt-6 text-center text-gray-400 text-sm">
+      <div className="mt-12 border-t border-yellow-700/40 pt-6 text-center text-yellow-400 text-sm">
         Terms & Conditions | Privacy Policy <br />
         © 2025 CPS ACADEMY. All Rights Reserved.
       </div>

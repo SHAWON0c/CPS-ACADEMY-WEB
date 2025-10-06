@@ -10,7 +10,7 @@ export async function GET(req) {
 
     // Fetch courses from Strapi
     const strapiRes = await fetch(
-      "http://localhost:1337/api/courses?populate=*",
+      `${process.env.NEXT_PUBLIC_API_URL}/api/courses?populate=*`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

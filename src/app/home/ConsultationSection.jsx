@@ -84,7 +84,7 @@ export default function ConsultationSection() {
 
               <button
                 type="submit"
-                className="w-full py-3 bg-cyan-400 text-gray-900 font-semibold rounded-xl hover:bg-cyan-500 transition-all duration-300"
+                className="w-full py-3 bg-yellow-400 text-gray-900 font-semibold rounded-xl  transition-all duration-300"
               >
                 Schedule Now
               </button>

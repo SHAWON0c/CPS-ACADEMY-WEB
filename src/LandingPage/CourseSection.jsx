@@ -116,7 +116,7 @@ export default function CourseSection() {
 
                             <div className="p-6 space-y-2">
                                 <h3 className="text-2xl font-bold text-white">Complete Competitive Programming</h3>
-                                <button className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white font-bold py-4 text-base rounded-lg shadow-md shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300">
+                                <button className="w-full bg-white text-black hover:from-amber-400 hover:to-yellow-500 font-bold py-4 text-base rounded-lg shadow-md shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300">
                                     Let's Code
                                 </button>
                             </div>
@@ -207,7 +207,7 @@ export default function CourseSection() {
 
                             <div className="p-6 space-y-2">
                                 <h3 className="text-2xl font-bold text-white">Complete Competitive Programming</h3>
-                                <button className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white font-bold py-4 text-base rounded-lg shadow-md shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300">
+                                <button className="w-full bg-white hover:from-amber-400 hover:to-yellow-500 text-black font-bold py-4 text-base rounded-lg shadow-md shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300">
                                     Let's Code
                                 </button>
                             </div>

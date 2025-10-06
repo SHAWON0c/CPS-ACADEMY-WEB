@@ -1,7 +1,16 @@
 'use client';
 
 import { useState } from "react";
-import { FaUser, FaMapMarkerAlt, FaGraduationCap, FaLink, FaLightbulb, FaBriefcase, FaFileAlt, FaInfoCircle } from "react-icons/fa";
+import {
+  FaUser,
+  FaMapMarkerAlt,
+  FaGraduationCap,
+  FaLink,
+  FaLightbulb,
+  FaBriefcase,
+  FaFileAlt,
+  FaInfoCircle,
+} from "react-icons/fa";
 
 const profileSteps = [
   { title: "My Profile", icon: <FaUser />, completed: true },
@@ -24,20 +33,23 @@ export default function ProfileSection() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <div className="flex min-h-screen bg-[#0b0a1f] text-white w-full  max-w-[90%] mx-auto">
+    <div className="flex min-h-screen bg-[#0b0a1f] text-white w-full max-w-[90%] mx-auto">
       {/* Sidebar */}
       <aside className="w-64 bg-[#1c1733] p-6 flex flex-col items-center space-y-6">
         {/* Avatar */}
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-20 h-20 rounded-full bg-gray-700 border-2 border-blue-400 flex items-center justify-center text-3xl">
+          <div className="w-20 h-20 rounded-full bg-gray-700 border-2 border-yellow-400 flex items-center justify-center text-3xl">
             <span>SS</span>
           </div>
-          <h2 className="font-semibold text-center text-purple-400">Shahadat Siddikee shawon</h2>
+          <h2 className="font-semibold text-center text-yellow-400">
+            Shahadat Siddikee Shawon
+          </h2>
           <p className="text-gray-400 text-sm text-center">WEB10-2355</p>
           <p className="text-gray-400 text-sm text-center">+8801914193662</p>
+
           {/* Progress */}
           <div className="w-full mt-2 bg-gray-700 h-2 rounded-full overflow-hidden">
-            <div className="h-2 bg-blue-400" style={{ width: "57%" }}></div>
+            <div className="h-2 bg-yellow-400" style={{ width: "57%" }}></div>
           </div>
           <p className="text-gray-400 text-xs mt-1">Complete your profile 57%</p>
         </div>
@@ -49,10 +61,10 @@ export default function ProfileSection() {
               key={idx}
               onClick={() => setActiveStep(idx)}
               className={`flex items-center w-full p-2 rounded-lg transition ${
-                activeStep === idx ? "bg-purple-800" : "hover:bg-purple-700/50"
+                activeStep === idx ? "bg-yellow-800" : "hover:bg-yellow-700/50"
               }`}
             >
-              <span className="mr-3 text-purple-400">{step.icon}</span>
+              <span className="mr-3 text-yellow-400">{step.icon}</span>
               <span className="flex-1 text-left">{step.title}</span>
               {step.completed && <span className="text-green-400">✔</span>}
             </button>
@@ -64,11 +76,13 @@ export default function ProfileSection() {
       <main className="flex-1 p-8">
         {/* Profile Info */}
         <div className="mb-8 bg-[#1c1733] p-6 rounded-xl shadow">
-          <h3 className="text-xl font-bold text-purple-400 mb-4">My Profile</h3>
+          <h3 className="text-xl font-bold text-yellow-400 mb-4">My Profile</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p className="text-gray-400 text-sm">Full Name</p>
-              <p className="text-white font-semibold">Shahadat Siddikee shawon</p>
+              <p className="text-white font-semibold">
+                Shahadat Siddikee Shawon
+              </p>
             </div>
             <div>
               <p className="text-gray-400 text-sm">Email</p>
@@ -87,7 +101,9 @@ export default function ProfileSection() {
 
         {/* Device Activity */}
         <div className="bg-[#1c1733] p-6 rounded-xl shadow">
-          <h3 className="text-lg font-bold text-purple-400 mb-4">Device Activity</h3>
+          <h3 className="text-lg font-bold text-yellow-400 mb-4">
+            Device Activity
+          </h3>
           <table className="w-full text-left text-gray-300">
             <thead className="border-b border-gray-700">
               <tr>
@@ -99,11 +115,16 @@ export default function ProfileSection() {
             </thead>
             <tbody>
               {deviceActivity.map((device) => (
-                <tr key={device.serial} className="border-b border-gray-700 hover:bg-purple-900/20 transition">
+                <tr
+                  key={device.serial}
+                  className="border-b border-gray-700 hover:bg-yellow-900/20 transition"
+                >
                   <td className="py-2">{device.serial}</td>
                   <td className="py-2">{device.platform}</td>
                   <td className="py-2">{device.date}</td>
-                  <td className="py-2 text-purple-400 hover:text-purple-300 cursor-pointer">Remove</td>
+                  <td className="py-2 text-yellow-400 hover:text-yellow-300 cursor-pointer">
+                    Remove
+                  </td>
                 </tr>
               ))}
             </tbody>

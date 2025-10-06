@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import img1 from "../../public/images/author/author1.jpeg"
 
 export default function SuccessStories() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -13,7 +14,7 @@ export default function SuccessStories() {
       name: "Arif Hossain",
       role: "Competitive Programmer",
       company: "Codeforces",
-      avatar: "/bangladeshi-male-student.jpg",
+      avatar: img1,
     },
     {
       batch: "Batch 09",
@@ -21,7 +22,7 @@ export default function SuccessStories() {
       name: "Fatima Rahman",
       role: "Competitive Programmer",
       company: "Codeforces",
-      avatar: "/bangladeshi-female-programmer.jpg",
+      avatar: img1,
     },
     {
       batch: "Batch 08",
@@ -29,7 +30,7 @@ export default function SuccessStories() {
       name: "Vikram Patel",
       role: "Competitive Programmer",
       company: "Codeforces",
-      avatar: "/indian-male-software-engineer.png",
+      avatar: img1,
     },
     {
       batch: "Batch 07",
@@ -37,7 +38,7 @@ export default function SuccessStories() {
       name: "Sarah Chen",
       role: "Competitive Programmer",
       company: "Codeforces",
-      avatar: "/asian-female-developer.png",
+      avatar: img1,
     },
     {
       batch: "Batch 06",
@@ -45,7 +46,7 @@ export default function SuccessStories() {
       name: "Rashed Ahmed",
       role: "Competitive Programmer",
       company: "Codeforces",
-      avatar: "/bangladeshi-male-student.jpg",
+      avatar: img1,
     },
   ]
 
@@ -128,17 +129,17 @@ export default function SuccessStories() {
                   </div>
 
                   {/* Text */}
-                  <p className="pt-5 text-yellow-400 text-base leading-relaxed min-h-[120px]">{testimonial.text}</p>
+                  <p className="pt-5 text-white text-base leading-relaxed min-h-[120px]">{testimonial.text}</p>
 
                   {/* Profile */}
                   <div className="flex items-center gap-3 pt-4 border-t border-yellow-600/20">
                     <img
-                      src={testimonial.avatar || "/placeholder.svg"}
+                      src={img1.src}
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full border border-yellow-600 object-cover"
                     />
                     <div>
-                      <h4 className="text-yellow-400 font-bold text-sm md:text-base">{testimonial.name}</h4>
+                      <h4 className="text-white font-bold text-sm md:text-base">{testimonial.name}</h4>
                       <p className="text-yellow-300 text-xs md:text-sm">{testimonial.role}</p>
                       <p className="text-yellow-300 text-xs">{testimonial.company}</p>
                     </div>
